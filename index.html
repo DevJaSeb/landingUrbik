@@ -13,6 +13,14 @@
     />
     <link rel="icon" href="./img/IconoUrbik.ico" />
     <link rel="stylesheet" href="./css/style.css" />
+    <!-- Font Awesome (para los íconos de redes) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-pVrmFxvW+KsuSWkA8wF6X5ZTyW3o92SzPyp7C4UqYpIzVN9z9E1VvU3BM6WyRzG1u1aU5YhD3U+0oz3j0b+MTw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <!-- NAVBAR -->
@@ -21,13 +29,9 @@
         <img src="img/LogoUrbik.png" alt="Logística URBIK" class="nav-logo" />
         <ul class="nav-links">
           <!-- Menú Hamburguesa -->
-          <div class="menu-toogle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+          <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
           </div>
-
-
           <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#cobertura">Cobertura</a></li>
@@ -41,11 +45,38 @@
         <source src="videos/videoPrueba.mp4" type="video/mp4" />
       </video>
       <div class="hero-content">
-        <h1>Movemos tu negocio con eficiencia</h1>
-        <p>Soluciones logísticas ágiles, seguras y sostenibles</p>
-        <a href="#contacto" class="btn">Contactanos</a>
+        <h1>Conectamos tu negocio con el mundo</h1>
+        <p>
+          Soluciones logísticas ágiles, integrales, con tecnologia de
+          vanguardia<br />
+          Transporte y distribucion con la confianza que tu negocio necesita
+        </p>
+        <div class="hero-buttons">
+          <a href="#contacto" class="btn">Solicitar Cotizacion</a>
+          <a href="#servicios" class="btn2">Ver Servicios</a>
+        </div>
       </div>
     </header>
+    <!-- ===== ESTADISTICAS ===== -->
+    <section class="estadisticas">
+      <div class="stat reveal">
+        <h2>500<span>+</span></h2>
+        <p>Clientes Satisfechos</p>
+      </div>
+      <div class="stat reveal">
+        <h2>24/<span>7</span></h2>
+        <p>Servicio Continuo</p>
+      </div>
+      <div class="stat reveal">
+        <h2>8<span>+</span></h2>
+        <p>Años de Experiencia</p>
+      </div>
+      <div class="stat reveal">
+        <h2>99<span>%</span></h2>
+        <p>Entregas a Tiempo</p>
+      </div>
+    </section>
+
     <!-- ===== NOSOTROS ===== -->
     <section id="nosotros" class="section">
       <div class="section-content">
@@ -119,6 +150,25 @@
         </form>
       </div>
     </section>
+    <!-- ===== ICONOS FLOTANTES ===== -->
+
+    <div class="social-icons">
+      <a
+        href="https://wa.me/5491122334455?text=Hola%20quiero%20hacer%20una%20consulta"
+        target="_blank"
+        class="whatsapp"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+
+      <a
+        href="https://instagram.com/logisticaurbik"
+        target="_blank"
+        class="instagram"
+      >
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+    </div>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
