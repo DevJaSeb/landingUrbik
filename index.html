@@ -12,33 +12,27 @@
       rel="stylesheet"
     />
     <link rel="icon" href="./img/IconoUrbik.ico" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <!-- Font Awesome (para los íconos de redes) -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-pVrmFxvW+KsuSWkA8wF6X5ZTyW3o92SzPyp7C4UqYpIzVN9z9E1VvU3BM6WyRzG1u1aU5YhD3U+0oz3j0b+MTw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="./css/style.css" />   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   </head>
   <body>
     <!-- NAVBAR -->
     <nav class="navbar">
       <div class="nav-container">
-        <img src="img/LogoUrbik.png" alt="Logística URBIK" class="nav-logo" />
-        <ul class="nav-links">
-          <!-- Menú Hamburguesa -->
+        <a href=""><img src="img/LogoUrbik.png" alt="Logística URBIK" class="nav-logo" /></a>
+        <!-- Menú Hamburguesa -->
           <div class="menu-toggle" id="mobile-menu">
             <i class="fa-solid fa-bars"></i>
           </div>
-          <li><a href="#nosotros">Nosotros</a></li>
+        <ul class="nav-links">          
+          <li><a href="#nosotros">Nosotros</a></li>          
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#cobertura">Cobertura</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
     </nav>
+    <div class="menu-overlay" id="menu-overlay"></div>
     <!-- HEADER -->
     <header class="hero">
       <video autoplay muted loop playsinline class="hero-video">

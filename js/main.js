@@ -2,9 +2,22 @@
 const menu = document.querySelector("#mobile-menu");
 const navLinks = document.querySelector(".nav-links");
 
+// Crear fondo overlay
+const overlay = document.createElement("div");
+overlay.classList.add("menu-overlay");
+document.body.appendChild(overlay);
+
 menu.addEventListener("click", () => {
   menu.classList.toggle("active");
   navLinks.classList.toggle("active");
+  overlay.classList.toggle("active");
+});
+
+// Cerrar menú al tocar fuera
+overlay.addEventListener("click", () => {
+  menu.classList.remove("active");
+  navLinks.classList.remove("active");
+  overlay.classList.remove("active");
 });
 
 // ==== SCROLL SUAVE ====
