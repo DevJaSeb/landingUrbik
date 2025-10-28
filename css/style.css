@@ -345,6 +345,37 @@ h3 {
   color: var(--color-negro);
 }
 
+.whatsapp-menu {
+  position: relative;
+}
+
+.submenu {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  background: rgba(0,0,0,0.85);
+  border-radius: 8px;
+  display: none;
+  flex-direction: column;
+  padding: 0.5rem;
+  gap: 0.3rem;
+}
+
+.submenu a {
+  color: var(--color-gris);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.submenu a:hover {
+  color: var(--color-negro);
+}
+
+.whatsapp-menu:hover .submenu {
+  display: flex;
+}
+
 /* === FOOTER === */
 footer {
   background-color: #111;
