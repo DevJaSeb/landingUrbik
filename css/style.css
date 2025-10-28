@@ -248,7 +248,7 @@ h3 {
 }
 .img-fluid {
   width: 100%;
-  max-width: 300px;
+  max-width: 380px;
   margin: 1.5rem auto;
   border-radius: 10px;
 }
@@ -333,7 +333,7 @@ h3 {
   color: var(--color-blanco);
   background-color: rgba(0, 0, 0, 0.7);
   padding: 12px;
-  border-radius: 50%;
+  border-radius: 10%;
   transition: 0.3s;
   display: flex;
   align-items: center;
