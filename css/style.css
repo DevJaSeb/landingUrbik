@@ -430,7 +430,6 @@ body.light-mode .toggle .fa-moon {
 }
 
 /* === ICONOS FLOTANTES === */
-/* === ICONOS FLOTANTES === */
 .social-icons {
   position: fixed;
   bottom: 20px;
@@ -463,10 +462,10 @@ body.light-mode .toggle .fa-moon {
   background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
 }
 
-/* Hover moderno */
+/* Hover iconos*/
 .social-icons a:hover {
   transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 25px rgba(212, 22, 22, 0.25);
 }
 
 .whatsapp-menu {
@@ -489,10 +488,15 @@ body.light-mode .toggle .fa-moon {
   color: var(--color-gris);
   text-decoration: none;
   font-size: 0.9rem;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
 }
 .whatsapp-menu:hover .submenu {
   display: flex;
+}
+.submenu a:hover {
+  background-color: var(--color-verde);
+  color: var(--color-blanco);
+  transform: translateX(-4px);
 }
 
 /* === FOOTER === */
@@ -596,8 +600,26 @@ body.light-mode #contacto {
 
 /* Íconos sociales */
 body.light-mode .social-icons a:hover {
+  color: #f7f7f7;
+}
+body.light-mode .social-icons a {
   background-color: var(--color-verde);
   color: var(--color-blanco);
+}
+body.light-mode .submenu {
+  background-color:#f3ebeb ;
+  color: var(--color-blanco);
+  transform: translateX(-4px);
+}
+body.light-mode .submenu a {
+  background-color: #fffffffd;
+  color: var(--color-blanco);
+  transform: translateX(-4px);
+}
+body.light-mode .submenu a:hover {
+  background-color: var(--color-verde);
+  color: #f7f7f7;
+  transform: translateX(-4px);
 }
 
 /* ==== ANIMACIONES ==== */
