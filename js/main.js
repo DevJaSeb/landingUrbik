@@ -1,6 +1,19 @@
 // ==== MENÚ HAMBURGUESA ====
 const menu = document.querySelector("#mobile-menu");
 const navLinks = document.querySelector(".nav-links");
+// ==== CAMBIO AUTOMÁTICO DE PALABRAS EN HERO ====
+const palabras = ["negocio", "tienda online", "empresa"];
+let indice = 0;
+const palabraSpan = document.getElementById("cambio-palabra");
+
+setInterval(() => {
+  indice = (indice + 1) % palabras.length;
+  palabraSpan.style.opacity = 0;
+  setTimeout(() => {
+    palabraSpan.textContent = palabras[indice];
+    palabraSpan.style.opacity = 1;
+  }, 400);
+}, 2500);
 
 // Crear fondo overlay
 const overlay = document.createElement("div");
@@ -47,21 +60,6 @@ window.addEventListener("scroll", () => {
     }
   }
 });
-
-// Animación al hacer scroll
-const logos = document.querySelectorAll('.clientes-grid img');
-
-function revealLogos() {
-  logos.forEach(logo => {
-    const rect = logo.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      logo.classList.add('reveal');
-    }
-  });
-}
-
-window.addEventListener('scroll', revealLogos);
-revealLogos();
 
 // === SWITCH MODO CLARO/OSCURO ===
 const switchToggle = document.getElementById('switch');
