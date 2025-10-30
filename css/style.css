@@ -21,7 +21,54 @@ img {
   --color-gris: #eaeaea;
   --color-blanco: #ffffff;
   --color-gris-oscuro: #1e1e1e;
+  --color-whatsapp: #25d366;
+  --color-instagram: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
 }
+
+/* ==== MODO CLARO ==== */
+body.light-mode {
+  --color-negro: #ffffff;
+  --color-gris-oscuro: #f2f2f2;
+  --color-blanco: #000000;
+  --color-gris: #333333;
+  background-color: var(--color-negro);
+  color: var(--color-gris);
+}
+
+body.light-mode .navbar {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+body.light-mode .section.dark {
+  background: #f4f4f4;
+}
+
+body.light-mode .stat {
+  background: var(--color-gris-oscuro);
+  color: var(--color-gris);
+}
+
+body.light-mode .card {
+  background: #fff;
+  border-color: #ccc;
+}
+
+body.light-mode .footer {
+  background: #eaeaea;
+  color: #111;
+}
+
+body.light-mode .hero-content {
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--color-negro);
+}
+
+body.light-mode #servicios,
+body.light-mode #clientes,
+body.light-mode #contacto {
+  background: #fafafa;
+}
+
 /*FUENTES*/
 body {
   font-family: "Poppins", sans-serif;
@@ -30,6 +77,11 @@ body {
   margin: 0;
   line-height: 1.6;
 }
+/* Transición entre modos */
+body, .navbar, .section, .card, .stat, .footer, .hero-content, .social-icons a {
+  transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
 /*TITULOS*/
 h1,
 h2,
@@ -71,6 +123,67 @@ h3 {
 .nav-links a:hover {
   color: var(--color-verde);
 }
+/* ==== SWITCH DE TEMA ==== */
+/* ==== SWITCH DE TEMA (con íconos Font Awesome) ==== */
+.theme-switch {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.toggle {
+  background: var(--color-gris-oscuro);
+  border-radius: 30px;
+  width: 60px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.4s ease;
+  overflow: hidden;
+}
+
+.toggle i {
+  position: absolute;
+  font-size: 1.2rem;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* 🌙 Modo oscuro (por defecto): muestra luna */
+.toggle .fa-sun {
+  opacity: 0;
+  transform: translateY(20px);
+  color: #ffd369;
+}
+
+.toggle .fa-moon {
+  opacity: 1;
+  transform: translateY(0);
+  color: var(--color-blanco);
+}
+
+/* ☀️ Modo claro: muestra sol */
+body.light-mode .toggle {
+  background: var(--color-verde);
+}
+
+body.light-mode .toggle .fa-sun {
+  opacity: 1;
+  transform: translateY(0);
+  color: var(--color-negro);
+}
+
+body.light-mode .toggle .fa-moon {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
 
 /* ==== HERO ==== */
 .hero {
@@ -318,6 +431,7 @@ h3 {
 }
 
 /* === ICONOS FLOTANTES === */
+/* === ICONOS FLOTANTES === */
 .social-icons {
   position: fixed;
   bottom: 20px;
@@ -328,21 +442,32 @@ h3 {
   z-index: 999;
 }
 
+/* Íconos base */
 .social-icons a {
   font-size: 1.8rem;
-  color: var(--color-blanco);
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 12px;
+  padding: 14px;
   border-radius: 10%;
-  transition: 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Colores permanentes */
+.social-icons a.whatsapp {
+  background-color: #25D366;
+}
+
+.social-icons a.instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+/* Hover moderno */
 .social-icons a:hover {
-  background-color: var(--color-verde);
-  color: var(--color-negro);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
 }
 
 .whatsapp-menu {
@@ -367,11 +492,6 @@ h3 {
   font-size: 0.9rem;
   transition: color 0.3s;
 }
-
-.submenu a:hover {
-  color: var(--color-negro);
-}
-
 .whatsapp-menu:hover .submenu {
   display: flex;
 }
@@ -382,6 +502,103 @@ footer {
   color: var(--gris);
   padding: 20px 0;
   font-size: 0.9rem;
+}
+/* ==== CLIENTES ==== */
+#clientes {
+  background: var(--color-gris-oscuro);
+  overflow: hidden;
+  position: relative;
+}
+
+#clientes h2 {
+  margin-bottom: 2rem;
+}
+
+.clientes-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* Carrusel con desplazamiento fluido */
+.carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  animation: scroll-loop 15s linear infinite;
+}
+
+/* Logos en color */
+.carousel-track img {
+  height: 70px;
+  width: auto;
+  opacity: 0.9;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+  will-change: transform;
+}
+
+/* Hover efecto: elevación y sombra */
+.carousel-track img:hover {
+  transform: translateY(-10px) scale(1.05);
+  opacity: 1;
+  box-shadow: 0 10px 25px rgba(110, 210, 111, 0.25);
+}
+
+/* Loop perfecto */
+ @keyframes scroll-loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pausa al pasar el mouse */
+.clientes-carousel:hover .carousel-track {
+  animation-play-state: paused;
+}
+/* ======== AJUSTES MODO CLARO ======== */
+
+/* Hero */
+body.light-mode .hero-content {
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--color-negro);
+}
+
+/* Servicios */
+body.light-mode #servicios {
+  background: #fafafa;
+}
+
+body.light-mode .card h3 {
+  color: var(--color-azul);
+}
+
+body.light-mode .card i {
+  color: var(--color-verde);
+}
+
+/* Estadísticas */
+body.light-mode .estadisticas {
+  background: #fff;
+}
+
+/* Clientes */
+body.light-mode #clientes {
+  background: #f5f5f5;
+}
+
+/* Contacto */
+body.light-mode #contacto {
+  background: #f7f7f7;
+}
+
+/* Íconos sociales */
+body.light-mode .social-icons a:hover {
+  background-color: var(--color-verde);
+  color: var(--color-blanco);
 }
 
 /* ==== ANIMACIONES ==== */

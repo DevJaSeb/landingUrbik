@@ -47,3 +47,25 @@ window.addEventListener("scroll", () => {
     }
   }
 });
+
+// Animación al hacer scroll
+const logos = document.querySelectorAll('.clientes-grid img');
+
+function revealLogos() {
+  logos.forEach(logo => {
+    const rect = logo.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      logo.classList.add('reveal');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealLogos);
+revealLogos();
+
+// === SWITCH MODO CLARO/OSCURO ===
+const switchToggle = document.getElementById('switch');
+
+switchToggle.addEventListener('change', () => {
+  document.body.classList.toggle('light-mode');
+});
