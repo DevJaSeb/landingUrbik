@@ -124,7 +124,6 @@ h3 {
   color: var(--color-verde);
 }
 /* ==== SWITCH DE TEMA ==== */
-/* ==== SWITCH DE TEMA (con íconos Font Awesome) ==== */
 .theme-switch {
   display: flex;
   align-items: center;
