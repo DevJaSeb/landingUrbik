@@ -51,9 +51,10 @@
         <source src="videos/videoPrueba.mp4" type="video/mp4" />
       </video>
       <div class="hero-text">
-        <h1>Tu aliado en logística para tu
+        <h1>
+          Tu aliado en logística para tu
           <span id="cambio-palabra">negocio</span>
-        </h1>       
+        </h1>
       </div>
     </header>
 
@@ -137,20 +138,20 @@
     <section id="cobertura" class="section">
       <div class="section-content">
         <h2>Cobertura</h2>
+
         <p>
           Nos enfocamos en ofrecer un servicio de envíos rápido y seguro en
           <strong>CABA y GBA</strong>. Cubriendo todo el mapa de Flex. Con un
-          equipo comprometido y tecnologia de vanguardia. Adoptamos nuestras
+          equipo comprometido y tecnología de vanguardia. Adaptamos nuestras
           soluciones a tus necesidades, asegurando que cada envío llegue en
           perfectas condiciones. Llegando de la misma forma que en
           <strong>CABA</strong> o a localidades como
-          <strong>Zarate, Campana, Lujar y La Plata</strong> entre otros
+          <strong>Zárate, Campana, Luján y La Plata</strong> entre otros.
         </p>
-        <img
-          src="img/mapaCovertura.jpeg"
-          alt="Mapa de cobertura"
-          class="img-fluid"
-        />
+
+        <div class="map-container">
+          <img src="./img/mapaCovertura.png" alt="mapa de cobertura envios flex">
+        </div>
       </div>
     </section>
 
@@ -194,36 +195,45 @@
     </section>
 
     <!-- ===== CONTACTO ===== -->
-    <section id="contacto" class="section dark">
-      <div class="section-content">
-        <h2>Contacto</h2>
-        <form class="contact-form">
-          <input type="text" placeholder="Nombre" required />
-          <input type="email" placeholder="Email" required />
-          <textarea placeholder="Mensaje" required></textarea>
-          <button type="submit" class="btn">Enviar</button>
-        </form>
-      </div>
-    </section>
+<section id="contacto" class="section dark">
+  <div class="section-content">
+    <h2>Contacto</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Nombre" required />
+      <input type="email" placeholder="Correo electrónico" required />
+      <input type="tel" placeholder="Teléfono" required />
+
+      <select required>
+        <option value="">¿Dónde vendés?</option>
+        <option value="mercadolibre">Mercado Libre</option>
+        <option value="shopify">Shopify</option>
+        <option value="instagram">Instagram</option>
+        <option value="otra">Otra</option>
+      </select>
+
+      <select required>
+        <option value="">Cantidad de envíos por día</option>        
+        <option value="11-20">+ de 10 ENVÍOS POR DIA</option>
+        <option value="21-30">+ de 20 ENVÍOS POR DIA</option>
+        <option value="31-50">+ de 50 ENVÍOS POR DIA</option>
+        <option value="100-200">+ de 100 ENVÍOS POR DIA</option>
+        <option value="+201">+ de 200 ENVÍOS POR DIA</option>
+        
+      </select>
+      <label class="consent">
+        <input type="checkbox" required />
+        Acepto la <a href="./privacidad.html" target="_blank">política de privacidad</a>.
+      </label>
+
+      <textarea placeholder="Mensaje adicional (opcional)"></textarea>
+
+      <button type="submit" class="btn">Solicitar cotización</button>
+    </form>
+  </div>
+</section>
+
     <!-- ===== ICONOS FLOTANTES ===== -->
 
-    <!-- <div class="social-icons">
-      <a
-        href="https://wa.me/5491122334455?text=Hola%20quiero%20hacer%20una%20consulta"
-        target="_blank"
-        class="whatsapp"
-      >
-        <i class="fa-brands fa-whatsapp"></i>
-      </a>
-
-      <a
-        href="https://www.instagram.com/logisticaurbik?igsh=MTBmeDFlNTNpZXhqbA=="
-        target="_blank"
-        class="instagram"
-      >
-        <i class="fa-brands fa-instagram"></i>
-      </a>
-    </div> -->
     <div class="social-icons">
       <div class="whatsapp-menu">
         <a href="#" class="whatsapp">

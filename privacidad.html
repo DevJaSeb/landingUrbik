@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Política de Privacidad | Logística Urbik</title>
+
+  <!-- Fuentes (como en tu sitio) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --panel:#121212;
+      --text:#eaf7ff;
+      --muted:#b9c7d4;
+      --accent:#00ff80;
+      --accent-2:#22c55e; /* medio tono para bordes/sombras */
+      --card-border: rgba(34,197,94,.2);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    .wrap{
+      max-width: 980px;
+      margin: clamp(48px,6vw,80px) auto;
+      padding: 0 clamp(16px,4vw,28px);
+    }
+
+    .topbar{
+      display:flex; align-items:center; gap:14px; margin-bottom:18px;
+      font-size:.95rem;
+    }
+    .crumb{
+      color:var(--muted); text-decoration:none; position:relative;
+    }
+    .crumb:hover{ color:#fff }
+    .dot{ width:6px; height:6px; border-radius:999px; background:var(--accent-2); display:inline-block; }
+
+    h1{
+      font-family:"Bebas Neue", system-ui, sans-serif;
+      letter-spacing:.5px;
+      margin:0 0 10px;
+      font-size: clamp(42px, 6vw, 64px);
+      line-height:1;
+    }
+    .subtitle{
+      color:var(--muted);
+      margin-bottom:28px;
+    }
+
+    .card{
+      background: var(--panel);
+      border:1px solid var(--card-border);
+      border-radius:14px;
+      padding: clamp(18px,3.5vw,28px);
+      box-shadow: 0 0 0 1px rgba(0,0,0,.2), 0 12px 24px rgba(0,0,0,.35);
+    }
+
+    .meta{
+      display:flex; flex-wrap:wrap; gap:14px;
+      color:var(--muted); font-size:.95rem;
+      padding:12px 14px; border:1px dashed rgba(255,255,255,.08);
+      border-radius:10px; background:rgba(255,255,255,.02);
+      margin-bottom:18px;
+    }
+
+    h2{
+      font-size: clamp(20px,2.4vw,24px);
+      margin: 28px 0 10px;
+      font-weight:700;
+    }
+    p{margin: 10px 0 0}
+    ul{margin: 8px 0 0 1.1rem}
+    li{margin:6px 0}
+    strong{color:#fff}
+
+    .note{
+      padding:12px 14px;
+      border-left:3px solid var(--accent);
+      background:linear-gradient(90deg, rgba(0,255,128,.08), transparent 60%);
+      border-radius:8px;
+      color:var(--muted);
+      margin-top:12px;
+    }
+
+    a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+    a:hover{
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    .footer-links{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:22px;
+    }
+    .btn{
+      appearance:none; border:none; cursor:pointer;
+      background:var(--accent);
+      color:#0a0a0a; font-weight:600;
+      padding:10px 18px; border-radius:8px;
+      transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+      text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+    }
+    .btn:hover{ transform:translateY(-1px); filter:brightness(1.03); box-shadow:0 0 0 4px rgba(0,255,128,.15)}
+    .btn.secondary{
+      background:transparent; color:var(--text);
+      border:1px solid var(--card-border);
+    }
+    .btn.secondary:hover{ box-shadow:0 0 0 4px rgba(255,255,255,.06) }
+
+    /* Responsive refinements */
+    @media (max-width:600px){
+      .meta{ font-size:.9rem }
+      ul{ margin-left: .9rem }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="topbar">
+      <a class="crumb" href="./index.html#contacto">← Volver</a>
+      <span class="dot"></span>
+      <span class="crumb">Logística Urbik</span>
+    </div>
+
+    <h1>Política de Privacidad</h1>
+    <p class="subtitle">Última actualización: <strong>Mayo 2025</strong></p>
+
+    <article class="card">
+      <div class="meta">
+        <div><strong>Sitio:</strong> https://logisticaurbik.com (ejemplo)</div>
+        <div><strong>Responsable:</strong> Logística Urbik</div>
+        <div><strong>Contacto:</strong> <a href="mailto:info@logisticaurbik.com">info@logisticaurbik.com</a></div>
+      </div>
+
+      <p>
+        En <strong>Logística Urbik</strong> nos tomamos muy en serio la privacidad de nuestros usuarios y clientes.
+        Esta Política describe qué datos personales recopilamos, cómo los usamos y cómo los protegemos.
+      </p>
+
+      <h2>Multimedia</h2>
+      <p>Si subís imágenes a la web, evitá incluir datos de ubicación (EXIF GPS). Los visitantes podrían descargar y extraer esa información.</p>
+
+      <h2>1. ¿Qué datos recopilamos?</h2>
+      <p><strong>Formularios de contacto y cotización:</strong> datos que brindás voluntariamente, como:</p>
+      <ul>
+        <li>Nombre y apellido</li>
+        <li>Email</li>
+        <li>Teléfono</li>
+        <li>Localidad</li>
+        <li>Empresa</li>
+        <li>Plataforma de ventas</li>
+        <li>Otra información que decidas compartir</li>
+      </ul>
+      <p><strong>Análisis y cookies:</strong> utilizamos herramientas como Google Analytics para estadísticas anónimas (páginas visitadas, tiempo en sitio, ubicación aproximada, dispositivo/navegador/SO). No identifican directamente a la persona.</p>
+
+      <h2>2. ¿Para qué usamos tus datos?</h2>
+      <ul>
+        <li>Responder consultas o solicitudes de cotización</li>
+        <li>Mejorar el sitio y la experiencia</li>
+        <li>Comunicarnos por temas relacionados a nuestros servicios</li>
+        <li>Enviarte información comercial solo si lo solicitás</li>
+      </ul>
+
+      <h2>3. ¿Compartimos tu información?</h2>
+      <p>No vendemos ni alquilamos tu información. Podemos compartirla únicamente con:</p>
+      <ul>
+        <li>Proveedores de servicios (p. ej., Google Analytics) que procesan datos anónimos</li>
+        <li>Autoridades competentes ante una obligación legal</li>
+      </ul>
+
+      <h2>4. WhatsApp</h2>
+      <p>Si nos contactás por WhatsApp, esa comunicación se rige también por la <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener">Política de Privacidad de WhatsApp</a>.</p>
+
+      <h2>5. ¿Cómo protegemos tu información?</h2>
+      <p>Aplicamos medidas técnicas y organizativas razonables para evitar accesos no autorizados, pérdida o alteración de los datos.</p>
+
+      <h2>6. Derechos del usuario</h2>
+      <p>Podés solicitar en cualquier momento:</p>
+      <ul>
+        <li>Acceso a tus datos personales</li>
+        <li>Rectificación de datos inexactos</li>
+        <li>Eliminación de tus datos</li>
+      </ul>
+      <p>Escribinos a <a href="mailto:info@logisticaurbik.com">info@logisticaurbik.com</a> para ejercer tus derechos.</p>
+
+      <h2>7. Cambios en esta política</h2>
+      <p>Podemos actualizarla ocasionalmente. Te sugerimos revisarla de forma periódica.</p>
+
+      <h2>8. Conservación</h2>
+      <p>Conservamos los datos únicamente el tiempo necesario para cumplir con las finalidades indicadas, o según obligaciones legales aplicables.</p>
+
+      <h2>9. Comentarios y detección de spam (si aplica)</h2>
+      <p>Si se habilitan comentarios, estos y sus metadatos podrían conservarse para moderación y seguridad. Podemos usar servicios automáticos de detección de spam.</p>
+
+      <div class="note">
+        Esta web se encuentra alojada/operada en servicios de terceros que también pueden tratar información técnica (logs, IP, navegador) con fines operativos y de seguridad.
+      </div>
+
+      <div class="footer-links">
+        <a class="btn" href="./index.html#contacto">Volver al formulario</a>
+        <a class="btn secondary" href="mailto:info@logisticaurbik.com">Escribir a soporte</a>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

@@ -395,6 +395,40 @@ body.light-mode .toggle .fa-moon {
   transform: scale(1.1);
 }
 
+/* ==== MAPA DE COBERTURA ==== */
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.map-container img {
+  width: 55%;
+  max-width: 550px;
+  height: auto;
+  transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 10px;
+  filter: brightness(0.95);
+  display: block;
+}
+
+/* Hover: simula iluminación sin agrandar el área visible */
+.map-container img:hover {
+  transform: scale(1.02);
+  filter: brightness(.90) drop-shadow(0 0 8px rgba(82, 42, 190, 0.4));
+  box-shadow: none;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .map-container img {
+    width: 80%;
+  }
+}
+
+
+
 /* ==== FORMULARIO ==== */
 .contact-form {
   display: flex;
@@ -415,6 +449,103 @@ body.light-mode .toggle .fa-moon {
   align-self: center;
   cursor: pointer;
 }
+
+/* ==== BOTÓN DE CONTACTO ==== */
+form button,
+form input[type="submit"] {
+  background-color: #00ff80; /* verde acento */
+  color: #0a0a0a; /* texto oscuro */
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Hover con efecto luz */
+form button:hover,
+form input[type="submit"]:hover {
+  background-color: #00e676; /* verde un poco más brillante */
+  box-shadow: 0 0 10px rgba(0, 255, 150, 0.4);
+  transform: scale(1.05);
+}
+
+/* Efecto al hacer clic */
+form button:active,
+form input[type="submit"]:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 6px rgba(0, 255, 150, 0.25);
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  border: 1px solid #00ff80;
+  border-radius: 6px;
+  padding: 0.8rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #00e676;
+  box-shadow: 0 0 8px rgba(0, 255, 150, 0.25);
+  transform: scale(1.01);
+}
+
+/* Checkbox y texto de política */
+.contact-form .consent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.contact-form .consent a {
+  color: #00ff80;
+  text-decoration: none;
+}
+
+.contact-form .consent a:hover {
+  text-decoration: underline;
+}
+/* ====== CONSENTIMIENTO (checkbox) ====== */
+.consent{ margin-top: 4px; }
+.checkbox{
+  display:flex; align-items:center; gap:.55rem;
+  font-size:.95rem; color:#b9c7d4;
+}
+.checkbox input{
+  width:18px; height:18px; accent-color:#00ff80; /* acento verde */
+}
+.checkbox a{ color:#00ff80; text-decoration:none; }
+.checkbox a:hover{ text-decoration:underline; text-underline-offset:3px; }
+/* 🔸 Texto gris cuando aún no se seleccionó nada */
+.contact-form select:invalid {
+  color: #808080; /* gris más claro para el placeholder */
+}
+
+/* 🔸 Texto blanco al elegir una opción */
+.contact-form select:valid {
+  color: #ffffff;
+  background-color: #181818;
+}
+
+/* Hover suave */
+.contact-form select:hover {
+  background-color: #1b1b1b;
+}
+
 
 /* ==== FOOTER ==== */
 .footer {
@@ -616,6 +747,58 @@ body.light-mode .submenu a:hover {
   background-color: var(--color-verde);
   color: #f7f7f7;
   transform: translateX(-4px);
+}
+/* ==== FORMULARIO: AJUSTES MODO CLARO ==== */
+body.light-mode .contact-form input,
+body.light-mode .contact-form textarea,
+body.light-mode .contact-form select {
+  background-color: var(--color-gris-oscuro); /* fondo claro suave */
+  color: var(--color-blanco);
+  border: 1px solid var(--color-verde);
+}
+
+body.light-mode .contact-form select:invalid {
+  color: #777; /* texto placeholder gris */
+}
+
+body.light-mode .contact-form select:valid {
+  color: #000; /* texto negro al seleccionar */
+}
+
+body.light-mode .contact-form select {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23777' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+}
+
+/* Hover */
+body.light-mode .contact-form select:hover,
+body.light-mode .contact-form input:hover,
+body.light-mode .contact-form textarea:hover {
+  background-color: #fff;
+  border-color: var(--color-verde);
+}
+
+/* Checkbox y texto */
+body.light-mode .checkbox {
+  color: #222;
+}
+body.light-mode .checkbox a {
+  color: var(--color-verde);
+}
+
+/* Botón */
+body.light-mode form button,
+body.light-mode form input[type="submit"] {
+  background-color: var(--color-verde);
+  color: var(--color-negro);
+}
+body.light-mode form button:hover,
+body.light-mode form input[type="submit"]:hover {
+  background-color: #00e676;
+  box-shadow: 0 0 10px rgba(0, 255, 100, 0.3);
 }
 
 /* ==== ANIMACIONES ==== */
