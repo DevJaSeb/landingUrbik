@@ -69,27 +69,49 @@ switchToggle.addEventListener('change', () => {
 });
 
 // === FETCH USO DEL FORMULARIO ===
- const form = document.getElementById('contactForm');
-  const status = document.getElementById('form-status');
+const form = document.getElementById("contactForm");
+const formStatus = document.getElementById("form-status");
+const submitBtn = form.querySelector("button");
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    status.textContent = 'Enviando...';
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
+  // Estado inicial
+  formStatus.textContent = "Enviando...";
+  submitBtn.disabled = true;
+  submitBtn.style.opacity = "0.6";
+  submitBtn.style.cursor = "not-allowed";
+  submitBtn.textContent = "Enviando...";
 
-      if (res.ok) {
-        form.reset();
-        status.textContent = '¡Gracias! Te contactaremos a la brevedad.';
-      } else {
-        status.textContent = 'Hubo un problema al enviar. Probá de nuevo.';
-      }
-    } catch (err) {
-      status.textContent = 'Error de conexión. Intentá nuevamente.';
+  try {
+    const res = await fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" },
+    });
+
+    if (res.ok) {
+      form.reset();
+      formStatus.textContent = "✅ ¡Gracias! Te contactaremos a la brevedad.";
+      submitBtn.textContent = "Enviado ✔";
+      submitBtn.style.backgroundColor = "#00e676";
+      setTimeout(() => {
+        submitBtn.textContent = "Solicitar cotización";
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = "1";
+        submitBtn.style.cursor = "pointer";
+        formStatus.textContent = "";
+      }, 3000);
+    } else {
+      formStatus.textContent = "⚠️ Hubo un problema al enviar. Probá de nuevo.";
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = "1";
+      submitBtn.textContent = "Solicitar cotización";
     }
-  });
+  } catch (err) {
+    formStatus.textContent = "❌ Error de conexión. Intentá nuevamente.";
+    submitBtn.disabled = false;
+    submitBtn.style.opacity = "1";
+    submitBtn.textContent = "Solicitar cotización";
+  }
+});

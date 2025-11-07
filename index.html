@@ -198,6 +198,7 @@
     </section>
 
     <!-- ===== CONTACTO ===== -->
+    <!-- ===== CONTACTO ===== -->
     <section id="contacto" class="section dark">
       <div class="section-content">
         <h2>Contacto</h2>
@@ -207,37 +208,59 @@
           method="POST"
           id="contactForm"
         >
-          <input type="text" placeholder="Nombre" required />
-          <input type="email" placeholder="Correo electrónico" required />
-          <input type="tel" placeholder="Teléfono" required />
+          <input type="text" name="nombre" placeholder="Nombre" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="Correo electrónico"
+            required
+          />
+          <input type="tel" name="telefono" placeholder="Teléfono" required />
 
-          <select required>
-            <option value="">¿Dónde vendés?</option>
+          <select name="plataforma" required>
+            <option value="" disabled selected>¿Dónde vendés?</option>
             <option value="mercadolibre">Mercado Libre</option>
             <option value="shopify">Shopify</option>
             <option value="instagram">Instagram</option>
             <option value="otra">Otra</option>
           </select>
 
-          <select required>
-            <option value="">Cantidad de envíos por día</option>
-            <option value="11-20">+ de 10 ENVÍOS POR DIA</option>
-            <option value="21-30">+ de 20 ENVÍOS POR DIA</option>
-            <option value="31-50">+ de 50 ENVÍOS POR DIA</option>
-            <option value="100-200">+ de 100 ENVÍOS POR DIA</option>
-            <option value="+201">+ de 200 ENVÍOS POR DIA</option>
+          <select name="envios_por_dia" required>
+            <option value="" disabled selected>
+              Cantidad de envíos por día
+            </option>
+            <option value="11-20">+ de 10 ENVÍOS POR DÍA</option>
+            <option value="21-30">+ de 20 ENVÍOS POR DÍA</option>
+            <option value="31-50">+ de 50 ENVÍOS POR DÍA</option>
+            <option value="100-200">+ de 100 ENVÍOS POR DÍA</option>
+            <option value="+201">+ de 200 ENVÍOS POR DÍA</option>
           </select>
+
           <label class="consent">
-            <input type="checkbox" required />
+            <input type="checkbox" name="acepta_politica" required />
             Acepto la
             <a href="./privacidad.html" target="_blank"
               >política de privacidad</a
             >.
           </label>
 
-          <textarea placeholder="Mensaje adicional (opcional)"></textarea>
+          <textarea
+            name="mensaje"
+            placeholder="Mensaje adicional (opcional)"
+          ></textarea>
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="Nuevo contacto desde Logística Urbik"
+          />
+          <input type="text" name="_gotcha" style="display: none" />
 
           <button type="submit" class="btn">Solicitar cotización</button>
+          <p
+            id="form-status"
+            style="margin-top: 0.5rem; font-size: 0.95rem"
+          ></p>
         </form>
       </div>
     </section>
