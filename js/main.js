@@ -67,3 +67,29 @@ const switchToggle = document.getElementById('switch');
 switchToggle.addEventListener('change', () => {
   document.body.classList.toggle('light-mode');
 });
+
+// === FETCH USO DEL FORMULARIO ===
+ const form = document.getElementById('contactForm');
+  const status = document.getElementById('form-status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.textContent = 'Enviando...';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.reset();
+        status.textContent = '¡Gracias! Te contactaremos a la brevedad.';
+      } else {
+        status.textContent = 'Hubo un problema al enviar. Probá de nuevo.';
+      }
+    } catch (err) {
+      status.textContent = 'Error de conexión. Intentá nuevamente.';
+    }
+  });

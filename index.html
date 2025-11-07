@@ -150,7 +150,10 @@
         </p>
 
         <div class="map-container">
-          <img src="./img/mapaCovertura.png" alt="mapa de cobertura envios flex">
+          <img
+            src="./img/mapaCovertura.png"
+            alt="mapa de cobertura envios flex"
+          />
         </div>
       </div>
     </section>
@@ -195,42 +198,49 @@
     </section>
 
     <!-- ===== CONTACTO ===== -->
-<section id="contacto" class="section dark">
-  <div class="section-content">
-    <h2>Contacto</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Nombre" required />
-      <input type="email" placeholder="Correo electrónico" required />
-      <input type="tel" placeholder="Teléfono" required />
+    <section id="contacto" class="section dark">
+      <div class="section-content">
+        <h2>Contacto</h2>
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/xqagrrlk"
+          method="POST"
+          id="contactForm"
+        >
+          <input type="text" placeholder="Nombre" required />
+          <input type="email" placeholder="Correo electrónico" required />
+          <input type="tel" placeholder="Teléfono" required />
 
-      <select required>
-        <option value="">¿Dónde vendés?</option>
-        <option value="mercadolibre">Mercado Libre</option>
-        <option value="shopify">Shopify</option>
-        <option value="instagram">Instagram</option>
-        <option value="otra">Otra</option>
-      </select>
+          <select required>
+            <option value="">¿Dónde vendés?</option>
+            <option value="mercadolibre">Mercado Libre</option>
+            <option value="shopify">Shopify</option>
+            <option value="instagram">Instagram</option>
+            <option value="otra">Otra</option>
+          </select>
 
-      <select required>
-        <option value="">Cantidad de envíos por día</option>        
-        <option value="11-20">+ de 10 ENVÍOS POR DIA</option>
-        <option value="21-30">+ de 20 ENVÍOS POR DIA</option>
-        <option value="31-50">+ de 50 ENVÍOS POR DIA</option>
-        <option value="100-200">+ de 100 ENVÍOS POR DIA</option>
-        <option value="+201">+ de 200 ENVÍOS POR DIA</option>
-        
-      </select>
-      <label class="consent">
-        <input type="checkbox" required />
-        Acepto la <a href="./privacidad.html" target="_blank">política de privacidad</a>.
-      </label>
+          <select required>
+            <option value="">Cantidad de envíos por día</option>
+            <option value="11-20">+ de 10 ENVÍOS POR DIA</option>
+            <option value="21-30">+ de 20 ENVÍOS POR DIA</option>
+            <option value="31-50">+ de 50 ENVÍOS POR DIA</option>
+            <option value="100-200">+ de 100 ENVÍOS POR DIA</option>
+            <option value="+201">+ de 200 ENVÍOS POR DIA</option>
+          </select>
+          <label class="consent">
+            <input type="checkbox" required />
+            Acepto la
+            <a href="./privacidad.html" target="_blank"
+              >política de privacidad</a
+            >.
+          </label>
 
-      <textarea placeholder="Mensaje adicional (opcional)"></textarea>
+          <textarea placeholder="Mensaje adicional (opcional)"></textarea>
 
-      <button type="submit" class="btn">Solicitar cotización</button>
-    </form>
-  </div>
-</section>
+          <button type="submit" class="btn">Solicitar cotización</button>
+        </form>
+      </div>
+    </section>
 
     <!-- ===== ICONOS FLOTANTES ===== -->
 
