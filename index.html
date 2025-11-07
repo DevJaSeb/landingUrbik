@@ -3,8 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Logistica Urbik</title>
-    <!-- Tipo grafia-->
+    <title>Logística Urbik | Envíos Flex en CABA y GBA</title>
+    <meta
+      name="description"
+      content="Logística Urbik ofrece envíos rápidos y seguros en CABA y GBA. Cubrimos todo el mapa Flex con soluciones adaptadas a tus necesidades."
+    />
+    <meta name="author" content="Logística Urbik" />
+    <meta name="robots" content="index, follow" />
+        <!-- Tipo grafia-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,6 +18,7 @@
       rel="stylesheet"
     />
     <link rel="icon" href="./img/IconoUrbik.ico" />
+    <link rel="preload" href="./css/style.css" as="style" />
     <link rel="stylesheet" href="./css/style.css" />
     <link
       rel="stylesheet"
@@ -59,11 +66,6 @@
     </header>
 
     <!-- ===== NOSOTROS ===== -->
-    <!-- Somos una empresa construida con esfuerzo y dedicación desde sus cimientos. 
-     Fernando y Daniel, sus fundadores, iniciaron este camino como choferes,
-     comprendiendo las necesidades reales de los clientes y comprometiéndose 
-     en cada servicio con responsabilidad y honestidad. -->
-
     <section id="nosotros" class="section">
       <div class="section-content">
         <h2>Quiénes Somos</h2>
@@ -150,9 +152,13 @@
         </p>
 
         <div class="map-container">
-          <img
+           <img
             src="./img/mapaCovertura.png"
-            alt="mapa de cobertura envios flex"
+            alt="Mapa de cobertura Logística Urbik"
+            loading="lazy"
+            decoding="async"
+            width="550"
+            height="550"
           />
         </div>
       </div>
@@ -164,40 +170,27 @@
         <h2>Empresas que confían en nosotros</h2>
         <div class="clientes-carousel">
           <div class="carousel-track">
-            <img
-              src="img/Clientes/mundoJugueteL.png"
-              alt="El Mundo del Jguete"
-            />
-            <img src="img/Clientes/factoryL.webp" alt="Factory Tienda Online" />
-            <img src="img/Clientes/kitanaL.png" alt="Kitana Intimates" />
-            <img src="img/Clientes/leroyL.png" alt="Leroy" />
-            <img src="img/Clientes/nolinL.webp" alt="Nolin" />
-            <img src="img/Clientes/tokyoL.webp" alt="Tokyo Tienda Online" />
-            <img
-              src="img/Clientes/edicionesContinenteL.png"
-              alt="Ediciones Continente"
-            />
+            <img src="img/Clientes/mundoJugueteL.png" alt="El Mundo del Juguete" loading="lazy" width="150" height="60"/>
+            <img src="img/Clientes/factoryL.webp" alt="Factory Tienda Online" loading="lazy" width="150" height="60"/>
+            <img src="img/Clientes/kitanaL.png" alt="Kitana Intimates" loading="lazy" width="150" height="60"/>
+            <img src="img/Clientes/leroyL.png" alt="Leroy" loading="lazy" width="150" height="60"/>
+            <img src="img/Clientes/nolinL.webp" alt="Nolin" loading="lazy" width="150" height="60"/>
+            <img src="img/Clientes/tokyoL.webp" alt="Tokyo Tienda Online" loading="lazy" width="150" height="60"/>
+            <img src="img/Clientes/edicionesContinenteL.png" alt="Ediciones Continente" loading="lazy" width="150" height="60"/>
 
             <!-- duplicados para loop -->
-            <img
-              src="img/Clientes/mundoJugueteL.png"
-              alt="El Mundo del Juguete"
-            />
-            <img src="img/Clientes/factoryL.webp" alt="Factory Tienda Online" />
-            <img src="img/Clientes/kitanaL.png" alt="Kitana Intimates" />
-            <img src="img/Clientes/leroyL.png" alt="Leroy" />
-            <img src="img/Clientes/nolinL.webp" alt="Nolin" />
-            <img src="img/Clientes/tokyoL.webp" alt="Tokyo Tienda Online" />
-            <img
-              src="img/Clientes/edicionesContinenteL.png"
-              alt="Ediciones Continente"
-            />
+            <img src="img/Clientes/mundoJugueteL.png" alt="El Mundo del Juguete" loading="lazy" width="150" height="60"/>
+            <img src="img/Clientes/factoryL.webp" alt="Factory Tienda Online" loading="lazy" width="150" height="60"/>
+            <img src="img/Clientes/kitanaL.png" alt="Kitana Intimates" loading="lazy" width="150" height="60"/>
+            <img src="img/Clientes/leroyL.png" alt="Leroy" loading="lazy" width="150" height="60"/>
+            <img src="img/Clientes/nolinL.webp" alt="Nolin" loading="lazy" width="150" height="60"/>
+            <img src="img/Clientes/tokyoL.webp" alt="Tokyo Tienda Online" loading="lazy" width="150" height="60"/>
+            <img src="img/Clientes/edicionesContinenteL.png" alt="Ediciones Continente" loading="lazy" width="150" height="60"/>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- ===== CONTACTO ===== -->
+    
     <!-- ===== CONTACTO ===== -->
     <section id="contacto" class="section dark">
       <div class="section-content">
@@ -292,6 +285,6 @@
     </footer>
 
     <!-- JS -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>
