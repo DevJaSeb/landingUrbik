@@ -1,6 +1,27 @@
 // ==== MENÚ HAMBURGUESA ====
 const menu = document.querySelector("#mobile-menu");
 const navLinks = document.querySelector(".nav-links");
+
+// Crear overlay del menú
+const overlay = document.createElement("div");
+overlay.classList.add("menu-overlay");
+document.body.appendChild(overlay);
+
+// Abrir / cerrar menú
+menu.addEventListener("click", () => {
+  menu.classList.toggle("active");
+  navLinks.classList.toggle("active");
+  overlay.classList.toggle("active");
+});
+
+// Cerrar al tocar fuera del menú
+overlay.addEventListener("click", () => {
+  menu.classList.remove("active");
+  navLinks.classList.remove("active");
+  overlay.classList.remove("active");
+});
+
+
 // ==== CAMBIO AUTOMÁTICO DE PALABRAS EN HERO ====
 const palabras = ["negocio", "tienda online", "empresa"];
 let indice = 0;
@@ -9,66 +30,55 @@ const palabraSpan = document.getElementById("cambio-palabra");
 setInterval(() => {
   indice = (indice + 1) % palabras.length;
   palabraSpan.style.opacity = 0;
+
   setTimeout(() => {
     palabraSpan.textContent = palabras[indice];
     palabraSpan.style.opacity = 1;
   }, 400);
 }, 2500);
 
-// Crear fondo overlay
-const overlay = document.createElement("div");
-overlay.classList.add("menu-overlay");
-document.body.appendChild(overlay);
 
-menu.addEventListener("click", () => {
-  menu.classList.toggle("active");
-  navLinks.classList.toggle("active");
-  overlay.classList.toggle("active");
-});
-
-// Cerrar menú al tocar fuera
-overlay.addEventListener("click", () => {
-  menu.classList.remove("active");
-  navLinks.classList.remove("active");
-  overlay.classList.remove("active");
-});
-
-// ==== SCROLL SUAVE ====
+// ==== SCROLL SUAVE PARA ANCLAS ====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function(e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
-    });
-    // Cierra el menú al hacer clic en móvil
+    const destino = document.querySelector(this.getAttribute("href"));
+    if (destino) {
+      destino.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Cierra el menú en móvil
     navLinks.classList.remove("active");
     menu.classList.remove("active");
+    overlay.classList.remove("active");
   });
 });
+
 
 // ==== SCROLL REVEAL CASERO ====
 const reveals = document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll", () => {
-  for (let i = 0; i < reveals.length; i++) {
+  reveals.forEach((el) => {
     const windowHeight = window.innerHeight;
-    const revealTop = reveals[i].getBoundingClientRect().top;
-    const revealPoint = 150;
+    const revealTop = el.getBoundingClientRect().top;
 
-    if (revealTop < windowHeight - revealPoint) {
-      reveals[i].classList.add("active");
+    if (revealTop < windowHeight - 150) {
+      el.classList.add("active");
     }
-  }
+  });
 });
 
-// === SWITCH MODO CLARO/OSCURO ===
-const switchToggle = document.getElementById('switch');
 
-switchToggle.addEventListener('change', () => {
-  document.body.classList.toggle('light-mode');
+// ==== SWITCH MODO CLARO/OSCURO ====
+const switchToggle = document.getElementById("switch");
+
+switchToggle.addEventListener("change", () => {
+  document.body.classList.toggle("light-mode");
 });
 
-// === FETCH USO DEL FORMULARIO ===
+
+// ==== ENVÍO DEL FORMULARIO ====
 const form = document.getElementById("contactForm");
 const formStatus = document.getElementById("form-status");
 const submitBtn = form.querySelector("button");
@@ -95,6 +105,7 @@ form.addEventListener("submit", async (e) => {
       formStatus.textContent = "✅ ¡Gracias! Te contactaremos a la brevedad.";
       submitBtn.textContent = "Enviado ✔";
       submitBtn.style.backgroundColor = "#00e676";
+
       setTimeout(() => {
         submitBtn.textContent = "Solicitar cotización";
         submitBtn.disabled = false;

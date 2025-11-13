@@ -68,20 +68,34 @@
     <!-- ===== NOSOTROS ===== -->
     <section id="nosotros" class="section">
       <div class="section-content">
-        <h2>Quiénes Somos</h2>
-        <p>
-          <strong>Logística URBIK</strong> nació de la experiencia de
-          <strong>Fernando</strong> y <strong>Daniel</strong> como choferes,
-          forjando un compromiso genuino con cada cliente. Hoy transformamos esa
-          dedicacion en soluciones integrales, optimizanddo tus procesos y
-          garantizando entregas eficientes, seguras y a tiempo.
-        </p>
+        <div class="nosotros-flex reveal">
+          <!-- IMAGEN -->
+          <div class="nosotros-img-container">
+            <img
+              src="./img/imgDaniFer.jpeg"
+              alt="Equipo Urbik"
+              class="nosotros-img"
+            />
+          </div>
+
+          <!-- TEXTO -->
+          <div class="nosotros-text">
+            <h2>Quiénes Somos</h2>
+            <p>
+              <strong>Logística URBIK</strong> nació de la experiencia de
+              Fernando y Daniel como choferes, forjando un compromiso genuino
+              con cada cliente. Hoy transformamos esa dedicación en soluciones
+              integrales, optimizando tus procesos y garantizando entregas
+              eficientes, seguras y a tiempo.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ===== SERVICIOS ===== -->
     <section id="servicios" class="section dark">
-      <div class="section-content">
+      <div class="section-content reveal">
         <h2>Servicios</h2>
         <div class="cards">
           <div class="card">
@@ -137,29 +151,19 @@
     </section>
 
     <!-- ===== COBERTURA ===== -->
-    <section id="cobertura" class="section">
-      <div class="section-content">
-        <h2>Cobertura</h2>
+    <section id="cobertura" class="section dark reveal">
+      <div class="cobertura-flex">
+        <div class="cobertura-texto">
+          <h2>COBERTURA</h2>
+          <p>
+            Contamos con una amplia cobertura en CABA, GBA y zonas seleccionadas
+            del interior del país. Ofrecemos logística rápida, segura y
+            eficiente, adaptada a tu operación.
+          </p>
+        </div>
 
-        <p>
-          Nos enfocamos en ofrecer un servicio de envíos rápido y seguro en
-          <strong>CABA y GBA</strong>. Cubriendo todo el mapa de Flex. Con un
-          equipo comprometido y tecnología de vanguardia. Adaptamos nuestras
-          soluciones a tus necesidades, asegurando que cada envío llegue en
-          perfectas condiciones. Llegando de la misma forma que en
-          <strong>CABA</strong> o a localidades como
-          <strong>Zárate, Campana, Luján y La Plata</strong> entre otros.
-        </p>
-
-        <div class="map-container">
-          <img
-            src="./img/mapaCovertura.png"
-            alt="Mapa de cobertura Logística Urbik"
-            loading="lazy"
-            decoding="async"
-            width="550"
-            height="550"
-          />
+        <div class="cobertura-mapa">
+          <img src="./img/mapaCovertura.png" alt="Mapa de cobertura" />
         </div>
       </div>
     </section>
@@ -276,7 +280,7 @@
     </section>
 
     <!-- ===== CONTACTO ===== -->
-    <section id="contacto" class="section dark">
+    <section id="contacto" class="section dark reveal">
       <div class="section-content contacto-flex">
         <!-- COLUMNA IZQUIERDA -->
         <div class="contacto-info">
@@ -295,7 +299,7 @@
             para vos.
           </p>
           <img
-            src="./img/imagenForm.jpg"
+            src="./img/imgFormConact.jpeg"
             alt="Cliente Logística Urbik"
             class="contacto-img"
           />
@@ -303,6 +307,7 @@
 
         <!-- COLUMNA DERECHA (FORMULARIO) -->
         <form
+          id="contactForm"
           class="contact-form contacto-form"
           action="https://formspree.io/f/xqagrrlk"
           method="POST"
