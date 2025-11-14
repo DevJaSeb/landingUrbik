@@ -11,11 +11,30 @@
     <meta name="author" content="Logística Urbik" />
     <meta name="robots" content="index, follow" />
     <!-- Tipo grafia-->
+    <!-- Preload de fuentes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Bebas Neue -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+    />
+    <link
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+    />
+
+    <!-- Poppins -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
     />
     <link rel="icon" href="./img/IconoUrbik.ico" />
     <link rel="preload" href="./css/style.css" as="style" />
@@ -72,9 +91,12 @@
           <!-- IMAGEN -->
           <div class="nosotros-img-container">
             <img
-              src="./img/imgDaniFer.jpeg"
+              src="./img/imgDaniFer.webp"
               alt="Equipo Urbik"
               class="nosotros-img"
+              loading="lazy"
+              width="350"
+              height="446"
             />
           </div>
 
@@ -163,7 +185,13 @@
         </div>
 
         <div class="cobertura-mapa">
-          <img src="./img/mapaCovertura.png" alt="Mapa de cobertura" />
+          <img
+            src="./img/mapaCovertura.webp"
+            alt="Mapa de cobertura"
+            loading="lazy"
+            width="480"
+            height="475"
+          />
         </div>
       </div>
     </section>
@@ -299,9 +327,12 @@
             para vos.
           </p>
           <img
-            src="./img/imgFormConact.jpeg"
+            src="./img/imgFormConact.webp"
             alt="Cliente Logística Urbik"
             class="contacto-img"
+            loading="lazy"
+            width="300"
+            height="308"
           />
         </div>
 

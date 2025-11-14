@@ -55,18 +55,43 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-// ==== SCROLL REVEAL CASERO ====
+// ==== SCROLL SUAVE OPTIMIZADO (SIN ERRORES) ====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+
+    const destino = this.getAttribute("href");
+
+    // Evitar error cuando href="#" o vacío
+    if (!destino || destino === "#") return;
+
+    const elemento = document.querySelector(destino);
+
+    // Si no existe ID, no hacer scroll
+    if (!elemento) return;
+
+    e.preventDefault();
+    elemento.scrollIntoView({ behavior: "smooth" });
+
+    // Cierra el menú móvil
+    menu.classList.remove("active");
+    navLinks.classList.remove("active");
+    overlay.classList.remove("active");
+  });
+});
+
+
+// ==== SCROLL REVEAL ====
 const reveals = document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll", () => {
-  reveals.forEach((el) => {
+  for (let i = 0; i < reveals.length; i++) {
     const windowHeight = window.innerHeight;
-    const revealTop = el.getBoundingClientRect().top;
+    const revealTop = reveals[i].getBoundingClientRect().top;
 
     if (revealTop < windowHeight - 150) {
-      el.classList.add("active");
+      reveals[i].classList.add("active");
     }
-  });
+  }
 });
 
 
