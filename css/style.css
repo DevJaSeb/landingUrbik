@@ -373,18 +373,82 @@ form button:active, form input[type="submit"]:active{
 .submenu a:hover { background-color:var(--color-verde); color:var(--color-blanco); transform: translateX(-4px); }
 
 /* ==== CLIENTES ==== */
-#clientes { background: var(--color-gris-oscuro); overflow:hidden; position:relative; }
-#clientes h2 { margin-bottom:2rem; }
-.clientes-carousel { width:100%; overflow:hidden; position:relative; padding:2rem 0; }
+#clientes {
+  background: var(--color-gris-oscuro);
+  overflow: hidden;
+  position: relative;
+}
+
+#clientes h2 {
+  margin-bottom: 2rem;
+}
+
+/* Desktop / general */
+.clientes-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 2rem 0;
+}
+
 .carousel-track {
-  display:flex; align-items:center; gap:4rem; animation: scroll-loop 15s linear infinite;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  animation: scroll-loop 10s linear infinite;
+  will-change: transform;
 }
+
 .carousel-track img {
-  height:70px; width:auto; opacity:.9; transition: transform .4s ease, box-shadow .4s ease, opacity .4s ease; will-change: transform;
+  height: 80px;
+  max-width: 180px;
+  width: auto;
+  flex: 0 0 auto;
+  opacity: .9;
+  transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
 }
-.carousel-track img:hover { transform: translateY(-10px) scale(1.05); opacity:1; box-shadow:0 10px 25px rgba(110,210,111,.25); }
-@keyframes scroll-loop { 0%{ transform: translateX(0);} 100%{ transform: translateX(-50%);} }
-.clientes-carousel:hover .carousel-track { animation-play-state: paused; }
+
+.carousel-track img:hover {
+  transform: translateY(-10px) scale(1.05);
+  opacity: 1;
+  box-shadow: 0 10px 25px rgba(110,210,111,.25);
+}
+
+@keyframes scroll-loop {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Solo activar pausa con hover en dispositivos con mouse */
+@media (hover: hover) and (pointer: fine) {
+  .clientes-carousel:hover .carousel-track {
+    animation-play-state: paused;
+  }
+}
+
+/* ===== MOBILE: carrusel manual ===== */
+@media (max-width: 768px) {
+
+  .clientes-carousel {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1.5rem 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .carousel-track {
+    animation: none;              /* sin scroll automático */
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+
+  .carousel-track img {
+    height: 56px;
+    scroll-snap-align: center;
+  }
+}
+
 
 /* ======== AJUSTES MODO CLARO EXTRA ======== */
 body.light-mode .hero-content { background: rgba(255,255,255,.6); color:var(--color-negro); }
